@@ -1,3 +1,6 @@
+"""
+Reference: https://www.geeksforgeeks.org/union-find/
+"""
 class Solution:
     def __init__(self):
         self.parents = []
