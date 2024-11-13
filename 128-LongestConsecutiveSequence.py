@@ -3,18 +3,15 @@ class Solution:
         nums = set(nums)
         longest_seq = 0
 
-        for n in nums:
+        for num in nums:
             # start 
-            if n-1 not in nums:
-                seq = 1
-                s = n
-                while True:
-                    if s + 1 in nums:
-                        seq += 1
-                        s = s + 1
-                    else:
-                        break
-                if seq > longest_seq:
-                    longest_seq = seq
+            if num-1 not in nums:
+                seqlen = 1
+                curr_num = num
+                while curr_num + 1 in nums:
+                    curr_num += 1
+                    seqlen += 1
+                    
+                longest_seq = max(longest_seq, seqlen)
 
         return longest_seq
